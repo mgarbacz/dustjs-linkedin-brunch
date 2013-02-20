@@ -13,13 +13,20 @@ If you want to use git version of plugin, add
 
 ## Usage
 Create a template:
+
     # views/templates/example.dust
     <h1>Hello {{name}}!</h1>
+
 Require the template into a variable:
+
     template = require 'views/templates/example'
+
 Load template into the `dust.cache` object:
+
     dust.loadSource template
+
 Render the template:
+
     dust.render 'example', { 'name': 'Batman' }, (error, output) =>
       @$el.html output if not error
 
