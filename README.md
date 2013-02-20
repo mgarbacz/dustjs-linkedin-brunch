@@ -7,9 +7,9 @@ Add `"dustjs-linkedin-brunch": "x.y.z"` to `package.json` of your brunch app.
 
 Pick a plugin version that corresponds to your minor (y) brunch version.
 
-If you want to use git version of plugin, add
+If you want to use git version of plugin, use
 `"dustjs-linkedin-brunch": "git@github.com:mgarbacz/dustjs-linkedin-brunch.git"`
-.
+instead.
 
 ## Usage
 Create a template:
@@ -32,7 +32,7 @@ Render the template:
 
 If you want to render templates within the browser, include the 
 `"dustjs-core-x.x.x.js"`
-file (included in vendor folder) with your script tags in your html 
+file (included in vendor folder) with your script tags in your html.
 
 For more info visit the
-[docs prepared by LinkedIn](http://linkedin.github.com/dustjs/)
+[docs prepared by LinkedIn](http://linkedin.github.com/dustjs/).
