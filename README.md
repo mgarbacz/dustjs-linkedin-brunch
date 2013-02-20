@@ -31,7 +31,8 @@ Render the template:
       @$el.html output if not error
 
 If you want to render templates within the browser, include the 
-`"dustjs-core-x.y.z.js"` file with your script tags in your html 
+`"dustjs-core-x.x.x.js"`
+file (included in vendor folder) with your script tags in your html 
 
 For more info visit the
 [docs prepared by LinkedIn](http://linkedin.github.com/dustjs/)
