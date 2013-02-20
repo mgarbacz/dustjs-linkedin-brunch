@@ -1,0 +1,7 @@
+# Active vim edits
+*.swp
+# Mac file store
+.DS_Store
+# NPM generated files
+npm-debug.log
+node_modules/

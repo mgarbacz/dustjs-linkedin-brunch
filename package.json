@@ -1,0 +1,29 @@
+{
+  "name": "dustjs-linkedin-brunch",
+  "version": "1.5.0",
+  "description": "Adds Dustjs (LinkedIn fork) support to brunch.",
+  "author": "Michal Garbacz",
+  "homepage": "https://github.com/mgarbacz/dustjs-linkedin-brunch",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:mgarbacz/dustjs-linkedin-brunch.git"
+  },
+  "main": "./lib/index",
+  "scripts": {
+    "prepublish": "node setup.js prepublish",
+    "postpublish": "node setup.js postpublish",
+    "test": "node setup.js test",
+    "postinstall": "node setup.js postinstall"
+  },
+  "engines": {
+    "node": "~0.6.10 || 0.8 || 0.9"
+  },
+  "dependencies": {
+    "coffee-script": "1.4.x",
+    "dustjs-linkedin": "1.2.x"
+  },
+  "devDependencies": {
+    "mocha": "1.8.x",
+    "chai": "1.5.x"
+  }
+}
