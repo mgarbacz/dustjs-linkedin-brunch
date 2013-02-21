@@ -20,4 +20,5 @@ module.exports = class DustCompiler
       callback error, result
 
   include: ->
-    [ (systemPath.join __dirname, '..', 'vendor', 'dustjs-core-1.2.0.js') ]
+    [ (systemPath.join __dirname,
+        '..', 'node-modules', 'dustjs-linkedin', 'dist', 'dust-core-2.0.0.js') ]
