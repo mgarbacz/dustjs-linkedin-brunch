@@ -11,15 +11,13 @@ module.exports = class DustCompiler
 
   compile: (data, path, callback) ->
     try
-      content = dust.compile data
+      content = dust.compile data, path.replace /\.dust/, ''
       contentJSON = JSON.stringify content
-      result = "module.exports = #{contentJSON};"
+      result = "module.exports = #{content};"
     catch err
       error = err
     finally
       callback error, result
 
-  include: [
-    (systemPath.join __dirname, '..', 'vendor',
-      'dustjs-core-1.2.0.js')
-  ]
+  include: ->
+    [ (systemPath.join __dirname, '..', 'vendor', 'dustjs-core-1.2.0.js') ]
