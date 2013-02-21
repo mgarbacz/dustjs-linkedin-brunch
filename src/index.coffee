@@ -11,6 +11,11 @@ module.exports = class DustCompiler
 
   compile: (data, path, callback) ->
     try
+      # Need to get template name, so have to get rid of directories in path
+      pathSplit = path.split '/'
+      pathDirs = pathSplit.length
+      path = if pathDirs > 1 then pathSplit[pathDirs - 1] else pathSplit[0]
+      # Need to get template name, so have to get rid of '.dust'
       content = dust.compile data, path.replace /\.dust/, ''
       contentJSON = JSON.stringify content
       result = "module.exports = #{content};"

@@ -19,7 +19,7 @@ describe('Plugin', function() {
     var content = '<h1>Hello {name}!</h1>';
     var expected = '<h1>Hello Batman!</h1>';
 
-    plugin.compile(content, 'template.dust', function(error, data) {
+    plugin.compile(content, 'dirs/dir/template.dust', function(error, data) {
       expect(error).not.to.be.ok;
 
       dust.loadSource(eval(data));
