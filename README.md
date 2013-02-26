@@ -15,7 +15,7 @@ instead.
 Create a template:
 
     # views/templates/example.dust
-    <h1>Hello {{name}}!</h1>
+    <h1>Hello {name}!</h1>
 
 Require the template into a variable:
 
