@@ -14,14 +14,14 @@
     "test": "./node_modules/mocha/bin/mocha --require test/common.js"
   },
   "engines": {
-    "node": "~0.6.10 || 0.8 || 0.9"
+    "node": "~0.6.10 || 0.8 || 0.9 || 0.10"
   },
   "dependencies": {
     "coffee-script": "1.6.x",
-    "dustjs-linkedin": "1.2.x"
+    "dustjs-linkedin": "1.2.3"
   },
   "devDependencies": {
-    "mocha": "1.8.x",
+    "mocha": "1.9.x",
     "chai": "1.5.x"
   }
 }
