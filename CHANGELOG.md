@@ -1,3 +1,7 @@
+# dustjs-linkedin-brunch 1.6.1 (May 3, 2013)
+* Updated to use 1.2.4 dustjs-linkedin (even though distribution is
+ still on 1.2.3)
+
 # dustjs-linkedin-brunch 1.6.0 (April 24, 2013)
 * Updated to use 1.2.3 dustjs-linkedin, 1.9.x mocha, added node 0.10 
 * Brunch on version 1.6.x, so bumping this plugin to 1.6.0
