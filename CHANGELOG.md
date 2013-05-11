@@ -1,3 +1,6 @@
+* Updated package.json with license and keyword info. Added license
+ file and clarified portion of README.
+
 # dustjs-linkedin-brunch 1.6.1 (May 3, 2013)
 * Updated to use 1.2.4 dustjs-linkedin (even though distribution is
  still on 1.2.3)
