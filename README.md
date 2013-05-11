@@ -30,5 +30,8 @@ Render the template:
     dust.render 'example', { 'name': 'Batman' }, (error, output) =>
       @$el.html output if not error
 
-For more info visit the
+For more info on Dustjs itself, visit the
 [docs prepared by LinkedIn](http://linkedin.github.com/dustjs/).
+
+## License
+[MIT License] (LICENSE.md)
