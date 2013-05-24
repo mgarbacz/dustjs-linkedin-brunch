@@ -22,7 +22,7 @@
     "dustjs-linkedin": "1.2.4"
   },
   "devDependencies": {
-    "mocha": "1.9.x",
-    "chai": "1.5.x"
+    "mocha": "1.10.x",
+    "chai": "1.6.x"
   }
 }
