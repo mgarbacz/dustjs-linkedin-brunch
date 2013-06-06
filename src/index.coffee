@@ -26,4 +26,4 @@ module.exports = class DustCompiler
 
   include: ->
     [ (systemPath.join __dirname,
-        '..', 'node_modules', 'dustjs-linkedin', 'dist', 'dust-core-1.2.3.js') ]
+        '..', 'node_modules', 'dustjs-linkedin', 'dist', 'dust-core-1.2.5.js') ]

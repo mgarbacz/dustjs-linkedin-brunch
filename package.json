@@ -19,7 +19,7 @@
   ],
   "dependencies": {
     "coffee-script": "1.6.x",
-    "dustjs-linkedin": "1.2.4"
+    "dustjs-linkedin": "1.2.5"
   },
   "devDependencies": {
     "mocha": "1.10.x",
