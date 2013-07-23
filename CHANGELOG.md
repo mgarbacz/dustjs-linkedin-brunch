@@ -1,3 +1,7 @@
+# dustjs-linkedin-brunch 1.7.0 (July 23, 2013)
+* Updated to use 2.0.0 dustjs-linkedin
+* Bumped minor version to 7 to match Brunch 1.7.x release
+
 # dustjs-linkedin-brunch 1.6.2 (June 6, 2013)
 * Updated to use 1.2.5 dustjs-linkedin
 * Updated package.json with license and keyword info. Added license
