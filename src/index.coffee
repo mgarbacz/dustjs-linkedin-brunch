@@ -16,15 +16,18 @@ module.exports = class DustCompiler
         path = @config.modules.nameCleaner(path)
 
       name = path.replace(/\.dust$/, '')
+      console.log("name:", name)
       content = dust.compile(data, name)
 
       # requiring the module will register this template with dust
       # and export a function that calls dust with the name filled in
       result = """
         #{content}
-        module.exports = function(context, callback) {
-          dust.render(#{JSON.stringify(name)}, context, callback);
-        };
+        if (typeof module !== 'undefined') {
+          module.exports = function(context, callback) {
+            dust.render(#{JSON.stringify(name)}, context, callback);
+          };
+        }
       """
     catch err
       error = err

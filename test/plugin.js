@@ -1,10 +1,18 @@
 var dust = require('dustjs-linkedin');
 
+var config = {
+  modules: {
+    nameCleaner: function(path) {
+      return path.replace(/^.*\//, ''); // remove all leading directories
+    }
+  }
+};
+
 describe('Plugin', function() {
   var plugin;
 
   beforeEach(function() {
-    plugin = new Plugin({});
+    plugin = new Plugin(config);
   });
 
   it('should be an object', function() {
@@ -22,7 +30,7 @@ describe('Plugin', function() {
     plugin.compile(content, 'dirs/dir/template.dust', function(error, data) {
       expect(error).not.to.be.ok;
 
-      dust.loadSource(eval(data));
+      dust.loadSource(data);
       dust.render('template', {'name': 'Batman'}, function(error, output) {
         expect(error).not.to.be.ok;
         expect(output).to.equal(expected);
