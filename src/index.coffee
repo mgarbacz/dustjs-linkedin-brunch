@@ -16,7 +16,6 @@ module.exports = class DustCompiler
         path = @config.modules.nameCleaner(path)
 
       name = path.replace(/\.dust$/, '')
-      console.log("name:", name)
       content = dust.compile(data, name)
 
       # requiring the module will register this template with dust
