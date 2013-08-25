@@ -1,3 +1,9 @@
+# dustjs-linked-brunch 1.7.1 (August 25, 2013)
+* Moved coffeescript compilation from `postinstall` to `prepublish`
+* Updated include path to match installation
+* Updated to use 2.0.2 dustjs-linkedin
+* Updated to use a nameCleaner function to get template names
+
 # dustjs-linkedin-brunch 1.7.0 (July 23, 2013)
 * Updated to use 2.0.0 dustjs-linkedin
 * Bumped minor version to 7 to match Brunch 1.7.x release
