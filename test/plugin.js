@@ -23,6 +23,12 @@ describe('Plugin', function() {
     expect(plugin.compile).to.be.an.instanceof(Function);
   });
 
+  it('should set path to dustjs-linkedin', function() {
+    var expected = 
+      '/Users/michal/dev/dustjs-linkedin-brunch/node_modules/dustjs-linkedin';
+    expect(plugin.include()).to.equal(expected);
+  });
+
   it('should compile and produce valid result', function(done) {
     var content = '<h1>Hello {name}!</h1>';
     var expected = '<h1>Hello Batman!</h1>';
