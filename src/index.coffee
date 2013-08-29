@@ -21,13 +21,16 @@ module.exports = class DustCompiler
       # requiring the module will register this template with dust
       # and export a function that calls dust with the name filled in
       result = """
-        module.exports = #{content}
-        module.exports.render = function(context, callback) {
-          dust.render(#{JSON.stringify(name)}, context, callback);
-        };
-        module.exports.stream = function(context) {
-          dust.stream(#{JSON.stringify(name)}, context);
-        };
+        var tmpl = #{content}
+        if (typeof module !== 'undefined') {
+          module.exports = tmpl;
+          module.exports.render = function(context, callback) {
+            dust.render(#{JSON.stringify(name)}, context, callback);
+          };
+          module.exports.stream = function(context) {
+            dust.stream(#{JSON.stringify(name)}, context);
+          };
+        }
       """
     catch err
       error = err
