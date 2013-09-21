@@ -1,5 +1,6 @@
 # dustjs-linkedin-brunch 1.7.2 (September 21, 2013)
 * Fixed typo in previous log in CHANGELOG
+* Updated usuage instructions in README to reflect updates
 * Added nodei badge for project's NPM info
 * Updated to 2.0.3 dustjs-linkedin
 * Setting include path to dust-core-x.x.x.js file dynamically based on user's
