@@ -19,17 +19,14 @@ Create a template:
     # views/templates/example.dust
     <h1>Hello {name}!</h1>
 
-Require the template into a variable:
+Require the template into a variable, which creates a render function:
 
-    template = require 'views/templates/example'
+    render_example = require 'views/templates/example'
 
-Load template into the `dust.cache` object:
+Call the render function, passing in data and a callback that makes use of the 
+rendered output:
 
-    dust.loadSource template
-
-Render the template:
-
-    dust.render 'example', { 'name': 'Batman' }, (error, output) =>
+    render_example { 'name': 'Batman' }, (error, output) =>
       @$el.html output if not error
 
 For more info on Dustjs itself, visit the
