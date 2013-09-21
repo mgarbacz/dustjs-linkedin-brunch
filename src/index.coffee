@@ -1,5 +1,7 @@
 dust = require 'dustjs-linkedin'
 systemPath = require 'path'
+npm = require 'npm'
+fs = require 'fs'
 
 module.exports = class DustCompiler
   brunchPlugin: yes
@@ -34,5 +36,12 @@ module.exports = class DustCompiler
       callback error, result
 
   include: ->
-    [ (systemPath.join __dirname,
-        '..', '..', 'dustjs-linkedin', 'dist', 'dust-core-2.0.2.js') ]
+    @getDistPath()
+
+  getDistPath: ->
+    modulePath = require.resolve('dustjs-linkedin')
+    moduleRoot = systemPath.join(modulePath, '..', '..')
+    modulePackage = require(systemPath.join(moduleRoot, 'package.json'))
+    moduleVersion = modulePackage.version
+
+    systemPath.join(moduleRoot, 'dist', 'dust-core-' + moduleVersion + '.js')
