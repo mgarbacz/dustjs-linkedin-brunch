@@ -1,6 +1,6 @@
 {
   "name": "dustjs-linkedin-brunch",
-  "version": "1.7.1",
+  "version": "1.7.2",
   "description": "Adds Dustjs (LinkedIn fork) support to brunch.",
   "author": "Michal Garbacz",
   "license": "MIT",
@@ -18,7 +18,7 @@
     "plugin"
   ],
   "dependencies": {
-    "dustjs-linkedin": "~2.0.2"
+    "dustjs-linkedin": "~2.0.3"
   },
   "devDependencies": {
     "coffee-script": "*",
