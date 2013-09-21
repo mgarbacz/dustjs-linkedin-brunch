@@ -23,11 +23,16 @@ describe('Plugin', function() {
     expect(plugin.compile).to.be.an.instanceof(Function);
   });
 
-  it('should set path to dustjs-linkedin', function() {
-    var expected = 
-      '/Users/michal/dev/dustjs-linkedin-brunch/node_modules/dustjs-linkedin';
-    expect(plugin.include()).to.equal(expected);
+  it('should include dustjs-core', function() {
+    var expected = 'node_modules/dustjs-linkedin/dist/dust-core-';
+    expect(plugin.include()).to.contain(expected);
   });
+
+  it('should include correct version of dustjs-core', function() {
+    var expected =
+      new RegExp('((?:[a-z][a-z]+))(-)(\\d+)(\\.)(\\d+)(\\.)(\\d+)(\\.)(js)');
+    expect(plugin.include()).to.match(expected);
+  })
 
   it('should compile and produce valid result', function(done) {
     var content = '<h1>Hello {name}!</h1>';
