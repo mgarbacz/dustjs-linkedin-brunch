@@ -5,6 +5,7 @@ Adds [Dustjs (LinkedIn fork)](http://linkedin.github.com/dustjs/) support to
 ## Installation
 [![NPM](https://nodei.co/npm/dustjs-linkedin-brunch.png?compact=true)]
 (https://nodei.co/npm/dustjs-linkedin-brunch/)
+
 Add `"dustjs-linkedin-brunch": "x.y.z"` to `package.json` of your brunch app.
 
 Pick a plugin version that corresponds to your minor (y) brunch version.
