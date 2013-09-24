@@ -32,7 +32,7 @@ describe('Plugin', function() {
     var expected =
       new RegExp('((?:[a-z][a-z]+))(-)(\\d+)(\\.)(\\d+)(\\.)(\\d+)(\\.)(js)');
     expect(plugin.include()).to.match(expected);
-  })
+  });
 
   it('should compile and produce valid result', function(done) {
     var content = '<h1>Hello {name}!</h1>';
