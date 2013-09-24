@@ -36,7 +36,7 @@ describe('Plugin', function() {
   });
   
   it('should include existing dustjs-core file', function() {
-    expect(fs.existsSync(plugin.include()).to.be.true);
+    expect(fs.existsSync(plugin.include())).to.be.true;
   });
 
   it('should compile and produce valid result', function(done) {
