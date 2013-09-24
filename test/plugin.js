@@ -1,4 +1,5 @@
 var dust = require('dustjs-linkedin');
+var fs = require('fs');
 
 var config = {
   modules: {
@@ -23,15 +24,19 @@ describe('Plugin', function() {
     expect(plugin.compile).to.be.an.instanceof(Function);
   });
 
-  it('should include dustjs-core', function() {
+  it('should include dustjs-core file', function() {
     var expected = 'node_modules/dustjs-linkedin/dist/dust-core-';
     expect(plugin.include()).to.contain(expected);
   });
 
-  it('should include correct version of dustjs-core', function() {
+  it('should include version of dustjs-core', function() {
     var expected =
       new RegExp('((?:[a-z][a-z]+))(-)(\\d+)(\\.)(\\d+)(\\.)(\\d+)(\\.)(js)');
     expect(plugin.include()).to.match(expected);
+  });
+  
+  it('should include existing dustjs-core file', function() {
+    expect(fs.existsSync(plugin.include()).to.be.true);
   });
 
   it('should compile and produce valid result', function(done) {
