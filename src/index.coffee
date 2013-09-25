@@ -36,9 +36,6 @@ module.exports = class DustCompiler
       callback error, result
 
   include: ->
-    @getDistPath()
-
-  getDistPath: ->
     modulePath = require.resolve('dustjs-linkedin')
     moduleRoot = systemPath.join(modulePath, '..', '..')
     modulePackage = require(systemPath.join(moduleRoot, 'package.json'))
