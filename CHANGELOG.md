@@ -1,3 +1,7 @@
+dustjs-linkedin-brunch 1.7.3 (Nov 09, 2013)
+-------------------------------------------
+* Pull dustjs-linkedin version ~2.2.0
+
 dustjs-linkedin-brunch 1.7.2 (Sep 21, 2013)
 -------------------------------------------
 * Fixed typo in previous log in CHANGELOG

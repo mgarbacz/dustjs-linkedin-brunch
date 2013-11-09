@@ -20,7 +20,7 @@ describe('Plugin', function() {
     expect(plugin).to.be.ok;
   });
 
-  it('should has #compile method', function() {
+  it('should have #compile method', function() {
     expect(plugin.compile).to.be.an.instanceof(Function);
   });
 
@@ -34,7 +34,7 @@ describe('Plugin', function() {
       new RegExp('((?:[a-z][a-z]+))(-)(\\d+)(\\.)(\\d+)(\\.)(\\d+)(\\.)(js)');
     expect(plugin.include()).to.match(expected);
   });
-  
+
   it('should include existing dustjs-core file', function() {
     expect(fs.existsSync(plugin.include())).to.be.true;
   });
