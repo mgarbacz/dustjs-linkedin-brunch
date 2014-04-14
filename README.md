@@ -15,20 +15,25 @@ If you want to use git version of plugin, use
 instead.
 
 ## Usage
-Create a template:
+Create a template file, i.e. `views/templates/example.dust`:
 
-    # views/templates/example.dust
-    <h1>Hello {name}!</h1>
+```HTML
+<h1>Hello {name}!</h1>
+```
 
 Require the template into a variable, which creates a render function:
 
-    render_example = require 'views/templates/example'
+```CoffeeScript
+render_example = require 'views/templates/example'
+```
 
 Call the render function, passing in data and a callback that makes use of the 
 rendered output:
 
-    render_example { 'name': 'Batman' }, (error, output) =>
-      @$el.html output if not error
+```CoffeeScript
+render_example { 'name': 'Batman' }, (error, output) =>
+  @$el.html output if not error
+```
 
 For more info on Dustjs itself, visit the
 [docs prepared by LinkedIn](http://linkedin.github.com/dustjs/).
