@@ -9,7 +9,7 @@ module.exports = class DustCompiler
   constructor: (@config) ->
     # leave whitespace intact during development
     unless 'production' in @config.env
-      dust.optimizers.format = (ctx, node)->node
+      dust?.optimizers?.format = (ctx, node)->node
 
   compile: (data, path, callback) ->
     try
