@@ -7,7 +7,9 @@ module.exports = class DustCompiler
   extension: 'dust'
 
   constructor: (@config) ->
-    null
+    # leave whitespace intact during development
+    unless 'production' in @config.env
+      dust.optimizers.format = (ctx, node)->node
 
   compile: (data, path, callback) ->
     try
@@ -22,15 +24,13 @@ module.exports = class DustCompiler
       # and export a function that calls dust with the name filled in
       result = """
         var tmpl = #{content}
-        if (typeof module !== 'undefined') {
-          module.exports = tmpl;
-          module.exports.render = function(context, callback) {
-            dust.render(#{JSON.stringify(name)}, context, callback);
-          };
-          module.exports.stream = function(context) {
-            dust.stream(#{JSON.stringify(name)}, context);
-          };
-        }
+        module.exports = tmpl;
+        module.exports.render = function(context, callback) {
+          dust.render(#{JSON.stringify(name)}, context, callback);
+        };
+        module.exports.stream = function(context) {
+          return dust.stream(#{JSON.stringify(name)}, context);
+        };
       """
     catch err
       error = err
