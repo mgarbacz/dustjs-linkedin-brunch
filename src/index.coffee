@@ -7,9 +7,8 @@ module.exports = class DustCompiler
   extension: 'dust'
 
   constructor: (@config) ->
-    # leave whitespace intact during development
-    unless 'production' in @config.env
-      dust?.optimizers?.format = (ctx, node)->node
+    if @config.plugins?.dust?.retainWhitespace
+      dust.optimizers.format = (ctx, node)->node
 
   compile: (data, path, callback) ->
     try
@@ -21,7 +20,7 @@ module.exports = class DustCompiler
       content = dust.compile(data, name)
 
       # requiring the module will register this template with dust
-      # and export a function that calls dust with the name filled in
+      # and export the block function with "render" and "stream" helpers
       result = """
         var tmpl = #{content}
         module.exports = tmpl;
@@ -35,8 +34,9 @@ module.exports = class DustCompiler
     catch err
       error = err
     finally
-      callback error, result
+      callback(error, result)
 
   include: ->
-    [ (systemPath.join __dirname,
-        '..', '..', 'dustjs-linkedin', 'dist', 'dust-core-2.0.3.js') ]
+    modulePath = require.resolve('dustjs-linkedin')
+    moduleRoot = systemPath.join(modulePath, '..', '..')
+    return systemPath.join(moduleRoot, 'dist', 'dust-core.js')
