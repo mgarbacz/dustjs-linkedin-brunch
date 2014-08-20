@@ -25,12 +25,9 @@ module.exports = class DustCompiler
             result = """
                 var tmpl = #{content}
                 module.exports = tmpl;
-                module.exports.render = function(context, callback) {
-                    dust.render(#{JSON.stringify(name)}, context, callback);
-                };
-                module.exports.stream = function(context) {
-                    return dust.stream(#{JSON.stringify(name)}, context);
-                };
+                module.exports.requirePath = #{JSON.stringify(name)};
+                module.exports.render = function(context, callback){return dust.render(#{JSON.stringify(name)}, context, callback);};
+                module.exports.stream = function(context){return dust.stream(#{JSON.stringify(name)}, context);};
             """
         catch err
             error = err
