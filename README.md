@@ -1,10 +1,11 @@
+_Brunch and dustjs are both unmaintained projects nowadays, this project was archived October 29th, 2023._
+
 ## dustjs-linkedin-brunch
 Adds [Dustjs (LinkedIn fork)](http://linkedin.github.com/dustjs/) support to
 [brunch](http://brunch.io).
 
 ## Installation
-[![NPM](https://nodei.co/npm/dustjs-linkedin-brunch.png?compact=true)]
-(https://nodei.co/npm/dustjs-linkedin-brunch/)
+[![NPM](https://nodei.co/npm/dustjs-linkedin-brunch.png?compact=true)](https://nodei.co/npm/dustjs-linkedin-brunch/)
 
 Add `"dustjs-linkedin-brunch": "x.y.z"` to `package.json` of your brunch app.
 
@@ -39,4 +40,4 @@ For more info on Dustjs itself, visit the
 [docs prepared by LinkedIn](http://linkedin.github.com/dustjs/).
 
 ## License
-[MIT License] (LICENSE.md)
+[MIT License](LICENSE.md)
